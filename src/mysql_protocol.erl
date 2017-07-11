@@ -57,7 +57,7 @@ handshake(Username, Password, Database, TcpModule, Socket, SetFoundRows) ->
     {ok, ConfirmPacket, _SeqNum3} = recv_packet(TcpModule, Socket, SeqNum2),
     case parse_handshake_confirm(ConfirmPacket) of
         #ok{status = OkStatus} ->
-            OkStatus = Handshake#handshake.status,
+            %OkStatus = Handshake#handshake.status,
             Handshake;
         Error ->
             Error
